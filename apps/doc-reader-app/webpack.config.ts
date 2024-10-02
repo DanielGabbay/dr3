@@ -1,4 +1,4 @@
-import { withModuleFederation } from '@nx/angular/module-federation';
+import {withModuleFederation} from '@nx/angular/module-federation';
 import config from './module-federation.config';
 
 /**
@@ -6,4 +6,9 @@ import config from './module-federation.config';
  * The DTS Plugin can be enabled by setting dts: true
  * Learn more about the DTS Plugin here: https://module-federation.io/configure/dts.html
  */
-export default withModuleFederation(config, { dts: false });
+export default {
+  ...withModuleFederation(config, {
+    dts: false,
+    runtimePlugins: [],
+  }),
+};

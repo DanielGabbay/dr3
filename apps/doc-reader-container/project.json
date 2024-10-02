@@ -65,10 +65,7 @@
       "executor": "@nx/angular:module-federation-dev-server",
       "options": {
         "port": 4500,
-        "publicHost": "http://localhost:4500",
-        "devRemotes": [
-          "doc-reader-app"
-        ]
+        "publicHost": "http://localhost:4500"
       },
       "configurations": {
         "production": {
@@ -102,7 +99,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "doc-reader-container:build",
-        "port": 4200,
+        "port": 4500,
         "spa": true
       }
     }
