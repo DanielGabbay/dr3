@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/tailwind";
+
+:root {
+  --app-font-size: 16px;
+  --app-font-family: 'Assistant';
+}
+
+
+html, body {
+  @apply block w-dvw h-dvh m-0 p-0;
+  font-family: var(--app-font-family), sans-serif;
+  font-size: var(--app-font-size);
+}
+
+body {
+  @apply flex w-full h-full bg-gray-100;
+}

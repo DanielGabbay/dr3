@@ -1,5 +1,24 @@
-<ul class="remote-menu">
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="doc-reader-app">DocReaderApp</a></li>
-</ul>
+<!--select app language: he/en-->
+<div class="selectors">
+  <div class="selector language-selector">
+    <select
+      id="language"
+      [ngModel]="APP_GLOBAL_SETTINGS.data().language"
+      (ngModelChange)="APP_GLOBAL_SETTINGS.set('language', $event)"
+    >
+      <option [value]="Language.Hebrew">עברית</option>
+      <option [value]="Language.English">English</option>
+    </select>
+  </div>
+
+
+  <div class="selector app-selector">
+    <ul class="remote-menu">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="doc-reader-app">DocReaderApp</a></li>
+      <li><a routerLink="demo-app">DemoApp</a></li>
+    </ul>
+  </div>
+</div>
+
 <router-outlet></router-outlet>

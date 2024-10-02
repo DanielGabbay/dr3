@@ -1,0 +1,40 @@
+:host {
+  @apply block w-full h-full;
+
+  .selectors {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+
+    .selector {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    ul {
+      @apply list-none flex flex-col gap-4 justify-end;
+      li {
+        @apply p-1  flex gap-4 items-center
+        border border-solid border-black rounded
+        cursor-pointer
+        transition duration-300
+        bg-blue-100 hover:bg-blue-200;
+
+        a {
+          @apply w-full;
+        }
+      }
+    }
+  }
+
+}
+

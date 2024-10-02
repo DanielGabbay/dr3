@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/doc-reader-container",
         "index": "apps/doc-reader-container/src/index.html",
         "main": "apps/doc-reader-container/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/doc-reader-container/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,7 +26,9 @@
             "input": "apps/doc-reader-container/public"
           }
         ],
-        "styles": ["apps/doc-reader-container/src/styles.scss"],
+        "styles": [
+          "apps/doc-reader-container/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/doc-reader-container/webpack.config.ts"
@@ -58,8 +64,11 @@
     "serve": {
       "executor": "@nx/angular:module-federation-dev-server",
       "options": {
-        "port": 4200,
-        "publicHost": "http://localhost:4200"
+        "port": 4500,
+        "publicHost": "http://localhost:4500",
+        "devRemotes": [
+          "doc-reader-app"
+        ]
       },
       "configurations": {
         "production": {
@@ -82,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/doc-reader-container/jest.config.ts"
       }

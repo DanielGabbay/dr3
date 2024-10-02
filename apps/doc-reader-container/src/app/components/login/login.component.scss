@@ -1,0 +1,35 @@
+.login-container {
+  @apply max-w-md mx-auto p-6 rounded bg-gray-100 shadow-md;
+
+  .form-group {
+    @apply mb-4;
+
+    label {
+      @apply block text-base mb-1;
+    }
+
+    input {
+      @apply text-base w-full p-2 border border-gray-300 rounded;
+    }
+
+    select {
+      @apply text-base w-full p-2 border border-gray-300 rounded ;
+    }
+
+    .error {
+      @apply text-red-500 text-sm mt-1;
+    }
+  }
+
+  .login-button {
+    @apply w-full p-2 bg-blue-500 text-white rounded cursor-pointer transition duration-300;
+
+    &:disabled {
+      @apply bg-gray-400;
+    }
+
+    &:hover:not(:disabled) {
+      @apply bg-blue-600;
+    }
+  }
+}

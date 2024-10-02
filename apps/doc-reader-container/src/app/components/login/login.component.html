@@ -1,0 +1,51 @@
+<!--Login component with:
+form for company name, username, password and login button
+-->
+<div class="login-container">
+  <div class="form-group">
+    <label for="companyName">שם חברה</label>
+    <input
+      id="companyName"
+      [ngModel]="LoginForm.company()"
+      (ngModelChange)="patchLoginForm('company', $event)"
+      placeholder="הכנס שם חברה"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="username">שם משתמש</label>
+    <input
+      id="username"
+      [ngModel]="LoginForm.username()"
+      (ngModelChange)="patchLoginForm('username', $event)"
+      placeholder="הכנס שם משתמש"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="password">סיסמה</label>
+    <input
+      id="password"
+      type="password"
+      [ngModel]="LoginForm.password()"
+      (ngModelChange)="patchLoginForm('password', $event)"
+      placeholder="הכנס סיסמה"
+    />
+  </div>
+  <div class="form-group">
+    <label for="remote-app">בחר אפליקציה</label>
+    <select id="remote-app" [ngModel]="LoginForm.remoteApp()" (ngModelChange)="patchLoginForm('remoteApp', $event)">
+      <option [value]="undefined"> בחר אפליקציה</option>
+      <option value="doc-reader-app">Doc Reader App</option>
+      <option value="demo-app">Demo App</option>
+    </select>
+  </div>
+  <button
+    type="button"
+    class="login-button"
+    [disabled]="!LoginFormValidator$().isFormValid"
+    (click)="login()"
+  >
+    התחבר
+  </button>
+</div>
