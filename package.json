@@ -2,7 +2,12 @@
   "name": "@dr3/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "": "--------- Serve ---------",
+    "serve:dc-container": "nx run doc-reader-container:serve-static",
+    "serve:dc-app": "nx run doc-reader-app:serve-static",
+    "serve": "nx run-many -t serve-static --projects=doc-reader-app"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~18.2.0",
