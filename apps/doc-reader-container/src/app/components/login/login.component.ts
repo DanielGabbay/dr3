@@ -15,7 +15,7 @@ export class LoginComponent {
     company: 'debug',
     username: 'daniel',
     password: 'Passw@rd123',
-    remoteApp: undefined as undefined | 'doc-reader-app' | 'demo-app',
+    remoteAppUrl: undefined as undefined | string,
   });
 
   private readonly UsernameValidationPattern = /^[a-zA-Z0-9]{3,20}$/;
@@ -23,11 +23,13 @@ export class LoginComponent {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   protected readonly LoginFormValidator$ = computed(() => {
     const {company, username, password} = this.LoginForm();
+
+
     const validators = {
       company: company.length > 0,
       username: this.UsernameValidationPattern.test(username),
       password: this.PasswordValidationPattern.test(password),
-      remoteApp: this.LoginForm().remoteApp !== undefined,
+      remoteAppUrl: this.LoginForm().remoteAppUrl !== undefined,
     };
     return {
       isFormValid: Object.values(validators).every((v) => v),
